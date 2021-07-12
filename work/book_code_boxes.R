@@ -28,11 +28,6 @@ coef(m)
 # plot residuals against speed
 plot( resid(m) ~ speed , data=cars )
 
-## R code 0.5
-install.packages(c("coda","mvtnorm","devtools","dagitty"))
-library(devtools)
-devtools::install_github("rmcelreath/rethinking")
-
 ## R code 2.1
 ways <- c( 0 , 3 , 8 , 9 , 0 )
 ways/sum(ways)
