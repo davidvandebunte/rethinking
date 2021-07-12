@@ -1526,12 +1526,9 @@ N <- 20
 kseq <- 1:5
 dev <- sapply( kseq , function(k) {
         print(k);
-        r <- replicate( 1e4 , sim_train_test( N=N, k=k ) );
+        r <- mcreplicate( 1e4 , sim_train_test( N=N, k=k ) , mc.cores=4 )
         c( mean(r[1,]) , mean(r[2,]) , sd(r[1,]) , sd(r[2,]) )
     } )
-
-## R code 7.17
-        r <- mcreplicate( 1e4 , sim_train_test( N=N, k=k ) , mc.cores=4 )
 
 ## R code 7.18
 plot( 1:5 , dev[1,] , ylim=c( min(dev[1:2,])-5 , max(dev[1:2,])+10 ) ,
