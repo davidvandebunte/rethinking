@@ -896,7 +896,7 @@ mtext( "Total counterfactual effect of M on D" )
 A_seq <- seq( from=-2 , to=2 , length.out=30 )
 
 ## R code 5.26
-post <- extract.samples( m5.3\_A )
+post <- extract.samples( m5.3_A )
 M_sim <- with( post , sapply( 1:30 ,
     function(i) rnorm( 1e3 , aM + bAM*A_seq[i] , sigma_M ) ) )
 
