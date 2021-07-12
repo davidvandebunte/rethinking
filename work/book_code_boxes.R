@@ -911,14 +911,14 @@ d$N <- standardize( d$neocortex.perc )
 d$M <- standardize( log(d$mass) )
 
 ## R code 5.30
-m5.5_draft <- quap(
-    alist(
-        K ~ dnorm( mu , sigma ) ,
-        mu <- a + bN*N ,
-        a ~ dnorm( 0 , 1 ) ,
-        bN ~ dnorm( 0 , 1 ) ,
-        sigma ~ dexp( 1 )
-    ) , data=d )
+# m5.5_draft <- quap(
+#     alist(
+#         K ~ dnorm( mu , sigma ) ,
+#         mu <- a + bN*N ,
+#         a ~ dnorm( 0 , 1 ) ,
+#         bN ~ dnorm( 0 , 1 ) ,
+#         sigma ~ dexp( 1 )
+#     ) , data=d )
 
 ## R code 5.31
 d$neocortex.perc
