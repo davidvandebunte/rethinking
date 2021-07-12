@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+docker run --rm -it \
+    --entrypoint /bin/bash \
+    --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
+    --mount type=bind,src="$(pwd)/work",dst=/home/jovyan/work \
+    -w /home/jovyan/work \
+    rethinking-jupyter-lab R --no-save

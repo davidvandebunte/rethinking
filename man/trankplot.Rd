@@ -34,9 +34,9 @@ traceplot( object , pars , chains , col=rethink_palette , alpha=1 ,
   \item{...}{Additional arguments to pass to \code{\link{plot}}}
 }
 \details{
-  \code{trankplot} produces rank histograms of each chain, as described in Vehtari et al 2019 (see reference below). For each parameter, the samples from all chains are first ranked, using \code{rank_mat}. This returns a matrix of ranks, with the chains preserved. Then a histogram is built for each chain, using the same break points. These historgrams are then overlain in the plot.
+  \code{trankplot} produces rank histograms of each chain, as described in Vehtari et al 2019 (see reference below). For each parameter, the samples from all chains are first ranked, using \code{rank_mat}. This returns a matrix of ranks, with the chains preserved. Then a histogram is built for each chain, using the same break points. These histograms are then overlain in the plot.
 
-  For healthy well-mixing chains, the histrograms should be uniform. When there are spikes for some chains, especially in the low or high ranks, this suggests problems in exploring the posterior.
+  For healthy well-mixing chains, the histograms should be uniform. When there are spikes for some chains, especially in the low or high ranks, this suggests problems in exploring the posterior.
 
   \code{traceplot} shows the sequential samples for each parameter and chain. This is the same information as the \code{trankplot}, but often much harder to see, given the volume of samples.
 }

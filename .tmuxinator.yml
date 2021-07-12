@@ -1,0 +1,17 @@
+name: rethinking
+
+windows:
+  - git:
+      - history -s ctags .
+  - work:
+      - history -s docker run --rm -it $(it) $(mw) registry.gitlab.com/davidvandebunte/minimal-environment:davidvandebunte
+  - R:
+      - cd R && history -s vim
+  - man:
+      - cd man && history -s vim
+  - jupyter:
+      - history -s ./env/jupyter
+  - shell:
+      - history -s ./env/shell
+  - publish:
+      - history -s time ./env/publish work/review.R

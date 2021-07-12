@@ -1,0 +1,52 @@
+---
+stages:
+  - build
+
+variables:
+  IMG: $CI_REGISTRY_IMAGE:latest
+  DOCKER_DRIVER: overlay2
+
+.dind_login: &dind_login
+  stage: build
+  image:
+    name: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker system info
+  artifacts:
+    when: always
+    paths:
+      - html/work
+
+build_chps_6to11:
+  <<: *dind_login
+  script:
+    - docker pull $IMG || true
+    - docker build --cache-from $IMG --tag $IMG .
+    - docker push $IMG
+    - ./env/publish work/review.R $IMG
+    - ./env/publish work/practice-6-to-11.R $IMG
+    - ./env/publish work/book_code_boxes.R $IMG
+
+build_chp_12:
+  <<: *dind_login
+  script:
+    - docker pull $IMG || true
+    - docker build --cache-from $IMG --tag $IMG .
+    - ./env/publish work/practice-12.R $IMG
+
+build_chp_13:
+  <<: *dind_login
+  script:
+    - docker pull $IMG || true
+    - docker build --cache-from $IMG --tag $IMG .
+    - ./env/publish work/practice-13.R $IMG
+
+build_chp_13_trolley:
+  <<: *dind_login
+  script:
+    - docker pull $IMG || true
+    - docker build --cache-from $IMG --tag $IMG .
+    - ./env/publish work/practice-13-trolley.R $IMG

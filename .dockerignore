@@ -1,0 +1,21 @@
+# See https://stackoverflow.com/a/51429852/622049
+
+# Ignore everything
+**
+
+# Allow files and directories
+!/R
+!NAMESPACE
+!DESCRIPTION
+!/install
+!/data
+!/inst
+!/man
+!/tests
+
+# Ignore unnecessary files inside allowed directories
+**/*.swp
+**/*~
+**/*.log
+**/.DS_Store
+**/Thumbs.db

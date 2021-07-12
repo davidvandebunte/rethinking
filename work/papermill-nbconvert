@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+set -eux
+
+SCRIPT=$1
+
+OUT_IPYNB=$(pwd)/html/${SCRIPT%%.*}.ipynb
+papermill --log-output ./work/template.ipynb -p script "$SCRIPT" "$OUT_IPYNB"
+jupyter nbconvert --to html "$OUT_IPYNB"

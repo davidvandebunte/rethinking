@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+set -eux
+
+SCRIPT=$1
+IMG=${2:-rethinking-jupyter-lab}
+
+if tty -s; then
+    INTERACTIVE="1"
+fi
+
+docker run --rm ${INTERACTIVE:+ --interactive --tty} \
+    --mount type=bind,src=$(pwd),dst=/home/jovyan/ \
+    -w /home/jovyan/ $IMG ./work/papermill-nbconvert $SCRIPT
+echo $(pwd)/html/${SCRIPT%%.*}.html
