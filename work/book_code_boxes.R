@@ -566,7 +566,7 @@ plot( height ~ weight , d2 , col=col.alpha(rangi2,0.5) )
 lines( weight.seq , mu.mean )
 
 # draw HPDI region for line
-shade( mu.HPDI , weight.seq )
+shade( mu.PI , weight.seq )
 
 # draw PI region for simulated heights
 shade( height.PI , weight.seq )
