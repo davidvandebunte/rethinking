@@ -1,3 +1,7 @@
+[sr2e]: https://davidvandebunte.gitlab.io/shared-notes/post/review-statistical-rethinking-second-edition/
+
+For a detailed review of this book, see [Statistical Rethinking - 2nd Edition][sr2e] on my blog.
+
 rethinking
 ==========
 
