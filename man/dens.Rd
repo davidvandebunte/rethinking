@@ -11,7 +11,7 @@ dens( x , adj=0.5 , norm.comp=FALSE , main="" , show.HPDI=FALSE , show.zero=FALS
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{Vector of values to construct density from, or data frame. If \code{x} is a data frame, then \code{dens} plots a grid of densities, one for each column in \code{x}.}
-  \item{adj}{width of density kernal.}
+  \item{adj}{width of density kernel}
   \item{norm.comp}{If \code{TRUE}, overlays normal density comparison.}
   \item{show.HPDI}{If a numeric value, displays HPDI of same width. For example, \code{show.HPDI=0.95} shows a 95 percent HPDI inside the density.}
   \item{show.zero}{If \code{TRUE}, draws a vertical line at location of zero on horizonal axis.}

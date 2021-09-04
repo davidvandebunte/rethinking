@@ -21,7 +21,7 @@ shade(object, lim, label = NULL, col = col.alpha("black",
 \details{
   This function uses \code{\link{polygon}} to draw a shaded region under a density curve or on a regression plot. The function assumes the plot already exists. See the examples below.
   
-  There are two plotting interfaces, for densities. First, if the density is plotted from kernal estimation, using perhaps \code{\link{density}}, then the same density estimate should be passed as the first parameter. See example. Second, if the density is plotted from a series of x and y values, from perhaps a grid approximation, then a formula can be passed to define the curve. See example.
+  There are two plotting interfaces, for densities. First, if the density is plotted from kernel estimation, using perhaps \code{\link{density}}, then the same density estimate should be passed as the first parameter. See example. Second, if the density is plotted from a series of x and y values, from perhaps a grid approximation, then a formula can be passed to define the curve. See example.
   
   For plotting confidence regions on a regression plot, the matrix object should contain y-axis values defining the border of the region. The first row of the matrix should be the bottom of the region, and the second row should be the top. Each column should correspond to the x-axis values in \code{lim}. See example.
 }
